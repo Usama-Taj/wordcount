@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Result</title>
+  </head>
+  <body class="container bg-dark text-center">
+    <a href="{% url 'home' %} " class="btn btn-dark text-light bg-dark border border-light text-uppercase font-weight-bold">Start Again</a>
+    <div class="row d-flex justify-content-center my-2">
+      <div class="col-md-6 border border-light rounded text-center text-light">
+        <h3 class="text-uppercase font-weight-bold">OUTPUT</h3>
+        <h5 class="text-uppercase font-weight-bold text-left">Your Text</h5>
+        <h6 class="text-uppercase">{{ full_text }}</h6>
+        <h5 class="text-uppercase font-weight-bold text-left">Total Words</h5>
+        <h6 class="text-uppercase">{{ no_of_words }}</h6>
+        <h5 class="text-uppercase font-weight-bold text-left">
+          Occurance of Each Word
+        </h5>
+        <ul>
+          {% for word, count in occurance_of_each_word %}
+          {{ word }} - {{ count }}
+          <br>
+          {% endfor %}
+        <ul>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+</html>
